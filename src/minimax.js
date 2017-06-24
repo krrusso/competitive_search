@@ -97,10 +97,19 @@ const heuristic = (state, maximizingPlayer) => {
     const minimizingPlayer = (maximizingPlayer == 'x') ? 'o' : 'x';
 
 	//An example.
-    const linesOfLengthTwoForX = state.numLines(2, 'x')
+    const linesOfLengthTwoForX = (state.numLines(2, 'x'))*15
+	const linesOfLengthThreeForX = (state.numLines(3, 'x'))*30
+	const resultx = linesOfLengthThreeForX + linesOfLengthTwoForX;
+
+	const linesOfLengthTwoForO = (state.numLines(2, 'o'))*15
+	const linesOfLengthThreeForO = (state.numLines(3, 'o'))*30
+	const resulto = linesOfLengthThreeForO + linesOfLengthTwoForO;
+	if (maximizingPlayer === 'o') {
+		return -(resultx - resulto)
+	} else 	{return resultx - resulto;}
 
     //Your code here.  Don't return random, obviously.
-	return Math.random()
+
 }
 
 
@@ -129,6 +138,10 @@ const minimax = (state, depth, maximizingPlayer) => {
 	var possibleStates = state.nextStates();
 	var currentPlayer = state.nextMovePlayer;
 	//Your code here.
+
+	if (depth === 0) {
+		return heuristic(state, maximizingPlayer)
+	}
 	return Math.random();
 }
 

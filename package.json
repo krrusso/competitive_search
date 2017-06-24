@@ -1,7 +1,7 @@
 {
   "name": "master",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Intro",
   "main": "index.js",
   "scripts": {
     "test": "mocha src/minimax_specs.js",
@@ -22,5 +22,13 @@
     "react-dom": "^15.4.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krrusso/competitive_search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krrusso/competitive_search/issues"
+  },
+  "homepage": "https://github.com/krrusso/competitive_search#readme"
 }
